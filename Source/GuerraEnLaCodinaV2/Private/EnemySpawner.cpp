@@ -19,13 +19,15 @@ void UEnemySpawner::RefreshAvailableSpawnPoints()
 
 	for (const TSoftObjectPtr<AEnemySpawnPoint>& Point : Spawnpoints)
 	{
-		if (Point.IsValid())
+		TObjectPtr<AEnemySpawnPoint> SpawnPoint = Point.Get();
+		if (!SpawnPoint && !Point.IsNull())
 		{
-			AEnemySpawnPoint* SpawnPoint = Point.Get();
-			if (SpawnPoint && SpawnPoint->bIsUnlocked)
-			{
-				AvailableSpawnPoints.Add(SpawnPoint);
-			}
+			SpawnPoint = Point.LoadSynchronous();
+		}
+
+		if (IsValid(SpawnPoint) && SpawnPoint->bIsUnlocked)
+		{
+			AvailableSpawnPoints.Add(SpawnPoint);
 		}
 	}
 }
