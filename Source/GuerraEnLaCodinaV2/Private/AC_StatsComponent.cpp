@@ -33,16 +33,19 @@ float UAC_StatsComponent::GetDamageMultiplier()
     return DamageMultiplier;
 }
 
-void UAC_StatsComponent::UpgradeMovementSpeed()
+void UAC_StatsComponent::UpgradeMovementSpeed(float MovementSpeedIncrease)
 {
+    MovementSpeed += MovementSpeedIncrease;
 }
 
-void UAC_StatsComponent::UpgradeCooldownReduction()
+void UAC_StatsComponent::UpgradeCooldownReduction(float CooldownReductionIncrease)
 {
+    CooldownReduction += CooldownReductionIncrease;
 }
 
-void UAC_StatsComponent::UpgradeDamageMultiplier()
+void UAC_StatsComponent::UpgradeDamageMultiplier(float DamageMultiplierIncrease)
 {
+    DamageMultiplier += DamageMultiplierIncrease;
 }
 
 void UAC_StatsComponent::ResetStats()

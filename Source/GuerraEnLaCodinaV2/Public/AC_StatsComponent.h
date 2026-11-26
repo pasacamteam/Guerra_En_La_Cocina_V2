@@ -42,11 +42,11 @@ public:
     //UFUNCTION(BlueprintCallable, Category = "Upgrade")
     //void UpgradeKnockbackResistance();
     UFUNCTION(BlueprintCallable, Category = "Upgrade")
-    void UpgradeMovementSpeed();
+    void UpgradeMovementSpeed(float MovementSpeedIncrease);
     UFUNCTION(BlueprintCallable, Category = "Upgrade")
-    void UpgradeCooldownReduction();
+    void UpgradeCooldownReduction(float CooldownReductionIncrease);
     UFUNCTION(BlueprintCallable, Category = "Upgrade")
-    void UpgradeDamageMultiplier();
+    void UpgradeDamageMultiplier(float DamageMultiplierIncrease);
 
     UFUNCTION(BlueprintCallable, Category = "Stats")
     void ResetStats();
